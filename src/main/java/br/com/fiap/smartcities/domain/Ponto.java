@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +26,10 @@ public class Ponto {
 	
 	@Column(name="fl_coleta")
 	private boolean flag;
+	
+	@JoinColumn(name = "id_ctr_coleta")
+	@ManyToOne
+	private CentroColeta centroColeta;
 	
 	
 
